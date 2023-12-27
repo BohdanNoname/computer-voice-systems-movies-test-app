@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/sort_type_dialog_background"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="4dp"
+    tools:context=".presentation.sort_type.SortTypeFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/sort_dialog_title_background"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_500"
+        android:text="@string/title"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:backgroundTint="@color/white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_release_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/sort_dialog_release_date_background"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_500"
+        android:text="@string/release_date"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:backgroundTint="@color/white" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/poppins_600"
+        android:text="@string/cancel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:cornerRadius="8dp" />
+</androidx.appcompat.widget.LinearLayoutCompat>

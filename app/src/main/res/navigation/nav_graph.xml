@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/catalogFragment">
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="ua.nedash.movies.presentation.catalog.CatalogFragment"
+        android:label="CatalogFragment"
+        tools:layout="@layout/fragment_catalog">
+
+        <action
+            android:id="@+id/action_catalogFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+        <action
+            android:id="@+id/action_catalogFragment_to_sortTypeFragment"
+            app:destination="@id/sortTypeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ua.nedash.movies.presentation.details.DetailsFragment"
+        android:label="DetailsFragment"
+        android:layout="@layout/fragment_details">
+
+        <argument
+            android:name="movie"
+            app:argType="ua.nedash.movies.data.model.Movie" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/sortTypeFragment"
+        android:name="ua.nedash.movies.presentation.sort_type.SortTypeFragment"
+        android:label="fragment_sort_type"
+        tools:layout="@layout/fragment_sort_type" />
+
+</navigation>

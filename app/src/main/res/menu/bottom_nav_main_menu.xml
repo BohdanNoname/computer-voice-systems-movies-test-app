@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/catalogFragment"
+        android:icon="@drawable/ic_saved_movies"
+        android:title="@string/saved_movies" />
+
+    <!--    <item-->
+    <!--        android:id="@id/randomImagesFragment"-->
+    <!--        android:icon="@drawable/ic_random_image"-->
+    <!--        android:title="@string/random_image" />-->
+
+<!--    <item-->
+<!--        android:id="@id/listMoviesFragment"-->
+<!--        android:icon="@drawable/ic_movies_list"-->
+<!--        android:title="@string/movies_list" />-->
+</menu>

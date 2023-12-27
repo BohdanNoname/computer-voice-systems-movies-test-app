@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Computer Voice Systems - Movies</string>
+    <string name="saved_movies">Saved</string>
+    <string name="random_image">Random</string>
+    <string name="movies_list">List</string>
+    <string name="movies_image">Search</string>
+
+    <string name="get_random_movie">Get random movie</string>
+    <string name="no_movies_yet_here">No movies here yet</string>
+    <string name="image_details">Image Details</string>
+    <string name="save_image_to_gallery">Save image to gallery</string>
+    <string name="random_image_full">Random Image</string>
+    <string name="image_header">%s\n%s</string>
+    <string name="saved_images_full">Saved Images</string>
+    <string name="movies">Movies</string>
+    <string name="title_and_year">%s(%s)</string>
+    <string name="time_and_genre">%s - %s</string>
+    <string name="on_my_watchlist">On my watchlist</string>
+    <string name="watch_trailer">Watch trailer</string>
+    <string name="add_to_watchlist">+ add to watchlist</string>
+    <string name="short_description">Short description</string>
+    <string name="details">Details</string>
+    <string name="genre">Genre</string>
+    <string name="released_date">Released date</string>
+    <string name="sort">Sort</string>
+    <string name="remove_from_watchlist">Remove from watchlist</string>
+    <string name="title">Title</string>
+    <string name="release_date">Release Date</string>
+    <string name="cancel">Cancel</string>
+</resources>
