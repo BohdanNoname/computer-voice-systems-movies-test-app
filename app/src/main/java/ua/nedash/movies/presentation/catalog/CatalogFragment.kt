@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ua.nedash.movies.R
@@ -44,7 +46,7 @@ class CatalogFragment : Fragment() {
     }
 
     private fun collectWatchlist() {
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             viewModel.watchlist.collectLatest { watchlist ->
                 val allMovies =
                     (requireContext().getListFromJsonResource(R.raw.movies) as Movies).movies
@@ -59,7 +61,7 @@ class CatalogFragment : Fragment() {
     }
 
     private fun collectSortType() {
-        lifecycleScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             viewModel.sortType.collectLatest { sortType ->
                 val movies = (binding.rvMovies.adapter as MoviesAdapter).currentList
                 if (movies.isNotEmpty() || sortType != SortType.NONE)
@@ -69,7 +71,6 @@ class CatalogFragment : Fragment() {
     }
 
     private fun setSortedMovies(movies: List<Movie>, sortType: SortType) {
-
         when (sortType) {
             SortType.TITLE -> {
                 (binding.rvMovies.adapter as MoviesAdapter).submitList(movies.sortedBy { movie -> movie.title })
@@ -86,7 +87,11 @@ class CatalogFragment : Fragment() {
     }
 
     private fun initMoviesRecyclerView() {
+        binding.rvMovies.setHasFixedSize(true)
+
         binding.rvMovies.adapter = MoviesAdapter(onMovieClick = { movie -> onMovieClick(movie) })
+        binding.rvMovies.adapter?.stateRestorationPolicy =
+            RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
     }
 
     private fun onMovieClick(movie: Movie) {
