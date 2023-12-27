@@ -29,6 +29,12 @@ class MoviesAdapter(
     inner class MoviesViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            binding.root.setOnClickListener {
+                onMovieClick(currentList[bindingAdapterPosition])
+            }
+        }
+
         private val context = binding.root.context
 
         fun bind(movie: Movie) {
@@ -44,10 +50,6 @@ class MoviesAdapter(
                 val genres = movie.genre.joinToString()
                 tvTimeAndGenre.text =
                     context.getString(R.string.time_and_genre, movie.duration, genres)
-
-                root.setOnClickListener {
-                    onMovieClick(movie)
-                }
             }
         }
     }
