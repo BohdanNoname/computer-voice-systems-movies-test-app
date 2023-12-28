@@ -23,18 +23,19 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_700"
         android:paddingHorizontal="16dp"
+        android:includeFontPadding="false"
         android:text="@string/movies"
-        android:textSize="32sp"
+        android:textSize="26sp"
         app:layout_constraintTop_toBottomOf="@id/tv_sort_type" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movies"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_header"
+        app:spanCount="2"
         tools:listitem="@layout/item_movie" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

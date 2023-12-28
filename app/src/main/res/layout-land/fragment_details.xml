@@ -105,24 +105,24 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_add_to_watchlist"
-                android:layout_width="0dp"
+                android:layout_width="200dp"
                 android:layout_height="40dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="@font/poppins_600"
+                android:lines="1"
+                android:text="@string/remove_from_watchlist"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="8sp"
-                android:lines="1"
+                android:textSize="10sp"
                 app:backgroundTint="@color/grey"
                 app:cornerRadius="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/btn_watch_trailer"
-                app:layout_constraintEnd_toEndOf="@+id/tv_title"
                 app:layout_constraintStart_toStartOf="@+id/tv_title"
-                app:layout_constraintTop_toBottomOf="@+id/tv_title"
                 tools:ignore="SmallSp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_watch_trailer"
-                android:layout_width="0dp"
+                android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="@font/poppins_600"
