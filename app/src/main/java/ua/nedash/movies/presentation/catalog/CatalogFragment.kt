@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import ua.nedash.movies.R
@@ -64,8 +65,13 @@ class CatalogFragment : Fragment() {
         lifecycleScope.launch(Dispatchers.IO) {
             viewModel.sortType.collectLatest { sortType ->
                 val movies = (binding.rvMovies.adapter as MoviesAdapter).currentList
-                if (movies.isNotEmpty() || sortType != SortType.NONE)
+                if (movies.isNotEmpty() || sortType != SortType.NONE) {
                     setSortedMovies(movies, sortType)
+
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        binding.rvMovies.scrollToPosition(0)
+                    }
+                }
             }
         }
     }

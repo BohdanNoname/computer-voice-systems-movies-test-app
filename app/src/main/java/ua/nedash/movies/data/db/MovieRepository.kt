@@ -1,8 +1,6 @@
 package ua.nedash.movies.data.db
 
-class MovieRepository(
-    private val movieDatabase: MovieDatabase
-) {
+class MovieRepository(movieDatabase: MovieDatabase) {
     private val movieDao = movieDatabase.movieDao()
 
     suspend fun insert(movie: MovieEntity) = movieDao.insert(movie)
