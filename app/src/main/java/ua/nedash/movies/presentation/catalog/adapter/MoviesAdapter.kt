@@ -39,12 +39,6 @@ class MoviesAdapter(
     inner class MoviesViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-//        init {
-//            binding.root.setOnClickListener {
-//                onMovieClick(currentList[bindingAdapterPosition])
-//            }
-//        }
-
         private val context = binding.root.context
 
         fun bind(movie: Movie) {
