@@ -1,7 +1,6 @@
 package ua.nedash.movies.data.db
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -13,14 +12,8 @@ interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(movie: MovieEntity)
 
-    @Delete
-    suspend fun delete(movie: MovieEntity)
-
     @Update
     suspend fun update(movie: MovieEntity)
-
-    @Query("SELECT * FROM movies")
-    suspend fun getAll(): List<MovieEntity>
 
     @Query("SELECT * FROM movies WHERE id = :movieId")
     suspend fun getById(movieId: Int): MovieEntity?
